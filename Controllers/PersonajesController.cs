@@ -19,6 +19,11 @@ namespace ApiPersonajesAWS.Controllers
         {
             return await this.repo.GetPersonajesAsync();
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Personaje>> GetPersonaje(int id)
+        {
+            return await this.repo.FindPersonajeAsync(id);
+        }
         [HttpPost]
         public async Task<ActionResult> Create(Personaje personaje)
         {
